@@ -1,0 +1,129 @@
+/**
+ * @Author: Satish Nepal <satish>
+ * @Date:   10-Feb-2020 12-06-39 PM
+ * @Email:  nepal.satish@hotmail.com
+ * @Last modified by:   satish
+ * @Last modified time: 10-Feb-2020 12-21-24 PM
+ * @Copyright: Satish Nepal
+ */
+ /*@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');*/
+ body{
+     counter-reset: how-we-work 0000;
+ }
+.logo-header img{
+    height: 90px !important;
+    padding: 5px 0;
+    margin: auto;
+    display: block;
+}
+.sticky-box{
+    position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+.tp-banner{
+    position: relative;
+}
+.searchbar{
+    position: absolute;
+    top: 50%;
+    left: 22%;
+    width: 56%
+}
+.searchbar .col-md-6,.searchbar .col-md-4,.searchbar .col-md-2{
+    padding: 0.5rem 0 !important;
+}
+.search-submit{
+    background: #f5a21c;
+    color: #fff
+}
+.block-step{
+    position: relative;
+    margin-bottom: 5rem;
+    padding-bottom:1rem;
+    padding-top: 1rem
+}
+.block-step:after{
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 5rem;
+    top: 100%;
+    left: 50%;
+    background: #ccc
+}
+.block-step:last-child:after{
+    display: none
+}
+.title-step{
+    font-size: 24px;
+    line-height: 1.38;
+    width: 100%;
+    right: 10px;
+    position: relative;
+    font-weight: 900;
+    color: #4a494e;
+}
+.title-step h3{
+    line-height: 1.38;
+    position: relative;
+    z-index: 10;
+    letter-spacing: 1px
+}
+.title-step:after{
+        position: absolute;
+        counter-increment: how-we-work;
+        content: counter(how-we-work);
+        color: #eaeaea;
+        opacity: 0.6;
+        top:0;
+        right:20%;
+        font-size: 7rem
+}
+@media(max-width:600px){
+    .title-step:after{
+            top: 100%;
+            right: 75%;
+            font-size: 5rem;
+    }
+}
+/*.ser-blog .icon-content a{*/
+/*    font-family: 'Lobster', cursive;*/
+/*    letter-spacing:1px;*/
+/*}*/
+.ser-blog img{
+    border-top-left-radius:8%;
+    border-bottom-right-radius:8%;
+    border-collapse:separate;
+}
+.ser-blog .icon-content:before{
+    background: #3573cd;
+    position: absolute;
+    content: " ";
+    width: 100px;
+    height: 200px;
+    top: -100px;
+    left: -26px;
+    transform: translate(-135px);
+    transition: 0.8s;
+    display: block;
+}
+.ser-blog .icon-content:after{
+    background: #3573cd;
+    position: absolute;
+    content: " ";
+    width: 100px;
+    height: 200px;
+    top: -100px;
+    right: -26px;
+    transform: translate(135px);
+    transition: 0.8s;
+    z-index: 10;
+    display: block
+}
+.ser-blog .services-blog:hover .icon-content:before{
+    transform: translate(0px) rotate(67.5deg);
+}
+.ser-blog .services-blog:hover .icon-content:after{
+    transform: translate(0px) rotate(-67.5deg);
+}
