@@ -37,35 +37,35 @@
                                     <div class="row">
                                         <div class="col-lg-4 col-md-4 col-sm-12 form-group">
                                             <label>Bedrooms</label>
-                                            <select>
-                                                <option>0</option>
-                                                <option selected="">1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
+                                            <select name="bedroom">
+                                                <option value="0">0</option>
+                                                <option value="1" selected="">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
                                             </select>
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-12 form-group">
                                             <label>Bathrooms</label>
-                                            <select>
-                                                <option>1</option>
-                                                <option>1.5</option>
-                                                <option>2</option>
-                                                <option>2.5</option>
-                                                <option>3</option>
-                                                <option>3.5</option>
-                                                <option>4</option>
-                                                <option>4.5</option>
+                                            <select name="bathroom">
+                                                <option value="1">1</option>
+                                                <option value="1.5">1.5</option>
+                                                <option value="2">2</option>
+                                                <option value="2.5">2.5</option>
+                                                <option value="3">3</option>
+                                                <option value="3.5">3.5</option>
+                                                <option value="4">4</option>
+                                                <option value="4.5">4.5</option>
                                             </select>
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-12 form-group">
                                             <label>Set Frequency</label>
-                                            <select>
-                                                <option>One-Time</option>
-                                                <option>Weekly (20%)</option>
-                                                <option selected="selected">Every Other Week (15%)</option>
-                                                <option>Monthly (10%)</option>
+                                            <select name="frequency">
+                                                <option value="ot">One-Time</option>
+                                                <option value="wk">Weekly (20%)</option>
+                                                <option value="eowk" selected="selected">Every Other Week (15%)</option>
+                                                <option value="mt">Monthly (10%)</option>
                                              </select>
                                         </div>
                                     </div>
@@ -105,10 +105,10 @@
                                     <h3 class="form-head">Zip Code</h3>
                                     <div class="row">
                                         <div class="col-sm-6 col-md-4 col-lg-4 form-group">
-                                            <input class="form-control" placeholder="Enter Zip Code" type="text">
+                                            <input name="zip-code" class="form-control" placeholder="Enter Zip Code" type="text">
                                         </div>
                                         <div class="col-sm-6 col-md-8 col-lg-8 form-group">
-                                            <input class="form-control" placeholder="Enter Email Address" type="text">
+                                            <input class="form-control" name="email" placeholder="Enter Email Address" type="text">
                                         </div>
                                     </div>
                                 </div>
@@ -118,7 +118,7 @@
                                         <div class="col-sm-12 col-md-12 col-lg-12 form-group date">
                                              <div class="form-group">
                                                 <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                                                    <input type="text" id="datetimepicker1" data-toggle="datetimepicker" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
+                                                    <input type="text" name="date" id="datetimepicker1" data-toggle="datetimepicker" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
                                                     <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
                                                         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                                     </div>
@@ -132,32 +132,32 @@
                                         <div class="new-address-block">
                                             <div class="row">
                                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                                  <input  value="" class="form-control" placeholder="First Name" type="text">
+                                                  <input  value="" name="first-name" class="form-control" placeholder="First Name" type="text">
                                                </div>
                                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                                  <input  value="" class="form-control " placeholder="Last Name" type="text">
+                                                  <input  value="" name="last-name" class="form-control " placeholder="Last Name" type="text">
                                                </div>
                                             </div>
                                             <div class="row">
                                                <div class="form-group col-lg-8 col-md-8 col-sm-6">
-                                                  <input placeholder="Address" class="form-control"  value="" type="text">
+                                                  <input placeholder="Address" name="address" class="form-control"  value="" type="text">
                                                </div>
                                                <div class="form-group col-lg-4 col-md-4 col-sm-6">
-                                                  <input  value="" class="form-control" placeholder="Apt" type="text">
+                                                  <input  value="" name="apt" class="form-control" placeholder="Apt" type="text">
                                                </div>
                                             </div>
                                             <div class="row">
                                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                                  <input  value="" class="form-control" placeholder="Phone" type="text">
+                                                  <input  value="" name="phone" class="form-control" placeholder="Phone" type="text">
                                                </div>
                                                <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                                                  <input  value="" class="form-control" placeholder="Alternative Number" type="text">
+                                                  <input  value="" name="alt-phone" class="form-control" placeholder="Alternative Number" type="text">
                                                </div>
                                             </div>
                                             <div class="row">
 
                                                <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                                                    <textarea placeholder="Notes and Special Instructions" class="form-control" ></textarea>
+                                                    <textarea name="note" placeholder="Notes and Special Instructions" class="form-control" ></textarea>
                                                </div>
                                             </div>
                                          </div>
@@ -189,7 +189,7 @@
                                         <div class="row">
                                             <div class="col-sm-6 col-md-4 col-lg-4">
                                                 <div class="form-group ">
-                                                    <select>
+                                                    <select name="month">
                                                       <option value="01">1-January</option>
                                                       <option value="02">2-February</option>
                                                       <option value="03">3-March</option>
@@ -207,7 +207,7 @@
                                             </div>
                                             <div class="col-sm-6 col-md-4 col-lg-4">
                                                 <div class="form-group ">
-                                                    <select>
+                                                    <select name="year">
                                                         <option value="2017">2017</option>
                                                         <option value="2018">2018</option>
                                                         <option value="2019">2019</option>

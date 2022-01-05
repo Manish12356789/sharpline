@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Dashboard</title>
+    <title> Sharpline | Admin Dashboard</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -222,10 +222,82 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="{{route('admin.sliderImage')}}" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>
+                    Slider Image
+                    {{-- <span class="right badge badge-danger">New</span> --}}
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('admin.testimonial')}}" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>
+                    Testimonial
+                    {{-- <span class="right badge badge-danger">New</span> --}}
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('admin.companyContacts')}}" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>
+                    Company Contacts
+                    {{-- <span class="right badge badge-danger">New</span> --}}
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{route('admin.service')}}" class="nav-link">
                   <i class="nav-icon fas fa-th"></i>
                   <p>
                     Services
+                    {{-- <span class="right badge badge-danger">New</span> --}}
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('admin.career')}}" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>
+                    Careers
+                    {{-- <span class="right badge badge-danger">New</span> --}}
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('admin.blog')}}" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>
+                    Blogs
+                    {{-- <span class="right badge badge-danger">New</span> --}}
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('admin.about.about')}}" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>
+                    About Us
+                    {{-- <span class="right badge badge-danger">New</span> --}}
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('admin.contact.contact')}}" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>
+                    Contact Messages
+                    {{-- <span class="right badge badge-danger">New</span> --}}
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('admin.order.order')}}" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>
+                    Bookings
                     {{-- <span class="right badge badge-danger">New</span> --}}
                   </p>
                 </a>
