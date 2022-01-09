@@ -17,7 +17,7 @@
     <div class="breadcrumb-row">
         <div class="container">
             <ul class="list-inline">
-                <li><a href="#">Home</a></li>
+                <li><a href="{{route('home')}}">Home</a></li>
                 <li>Sharpline Blog</li>
             </ul>
         </div>
@@ -28,16 +28,18 @@
             <div class="row">
                 <!-- Left part start -->
                 <div class="col-lg-9 col-md-7 col-sm-6">
+                    @foreach ($blogs as $blog)
+                        
                     <div class="blog-post blog-md clearfix date-style-2">
                         <div class="post-media img-effect zoom-slow"> <a href="#"><img src="{{asset('user/images/blog/grid/pic1.jpg')}}" alt=""></a> </div>
                         <div class="post-info">
                             <div class="post-title">
-                                <h3 class="post-title"><a href="#">Cleaning Team Is... post</a></h3>
+                                <h3 class="post-title"><a href="#">{{$blog->title}}</a></h3>
                             </div>
                             <div class="post-meta">
                                 <ul>
-                                    <li class="post-date"> <i class="fa fa-calendar"></i><strong>10 Aug</strong> <span> 2016</span> </li>
-                                    <li class="post-author"><i class="fa fa-user"></i>By <a href="#">demongo</a> </li>
+                                    <li class="post-date"> <i class="fa fa-calendar"></i><strong>{{$blog->created_at}}</strong> </li>
+                                    <li class="post-author"><i class="fa fa-user"></i>By <a href="#">Admin</a> </li>
                                     <li class="post-comment"><i class="fa fa-comments"></i> <a href="#">0</a> </li>
                                 </ul>
                             </div>
@@ -51,7 +53,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="blog-post blog-md clearfix date-style-2">
+                    @endforeach
+
+                    {{-- <div class="blog-post blog-md clearfix date-style-2">
                         <div class="post-media img-effect zoom-slow"> <a href="#"><img src="{{asset('user/images/blog/grid/pic2.jpg')}}" alt=""></a> </div>
                         <div class="post-info">
                             <div class="post-title">
@@ -188,7 +192,7 @@
                                 <div class="post-tags"> <a href="#">Child </a> <a href="#">Eduction </a> <a href="#">Money </a> <a href="#">Resturent </a> </div>
                             </div>
                         </div>
-                    </div>
+                    </div> 
                     <div class="blog-post blog-md clearfix date-style-2">
                         <div class="post-media img-effect zoom-slow"><a href="#"><img src="{{asset('user/images/blog/grid/pic1.jpg')}}" alt=""></a></div>
                         <div class="post-info">
@@ -211,7 +215,7 @@
                                 <div class="post-tags"> <a href="#">Child </a> <a href="#">Eduction </a> <a href="#">Money </a> <a href="#">Resturent </a> </div>
                             </div>
                         </div>
-                    </div>
+                    </div>--}}
                     <!-- Pagination start -->
                     <div class="pagination-bx m-b10">
                         <ul class="pagination">

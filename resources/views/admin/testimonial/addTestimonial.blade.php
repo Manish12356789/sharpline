@@ -18,6 +18,14 @@
                 <h4 class="card-title">Add Testimonial</h4>
                 <form class="forms-sample" enctype="multipart/form-data" action="{{ route('admin.testimonial.store') }}" method="POST">
                     @csrf
+                    <div class="form-group">
+                      <label for="name">Name</label>
+                      <input name="name" id="name" class="form-control">
+                  </div>
+                  <div class="form-group">
+                      <label for="position">Position</label>
+                      <input name="position" id="position" class="form-control">
+                  </div>
                   <div class="form-group">
                       <label for="text">Text</label>
                       <textarea name="text" rows="9" id="text" class="form-control"></textarea>

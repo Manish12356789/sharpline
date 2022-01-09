@@ -30,6 +30,8 @@ Route::get('book/', [UserController::class, 'book'])->name('book');
 Route::get('blog/', [UserController::class, 'blog'])->name('blog');
 Route::get('about/', [UserController::class, 'about'])->name('about');
 Route::get('services/{id}', [UserController::class, 'service'])->name('service_single');
+Route::get('career/save', [UserController::class, 'saveCareer'])->name('career.save');
+
 
 Auth::routes();
 
@@ -84,6 +86,12 @@ Route::group(['prefix' => 'admin','middleware' => 'authadmin'], function () {
 	Route::post('/blog/update/{id}', admin\BlogController::class .'@update')->name('admin.blog.update');
 	Route::get('/blog/delete/{id}', admin\BlogController::class .'@destroy')->name('admin.blog.destroy');
 
+	Route::get('/career/all', admin\CareerController::class .'@index')->name('admin.career');
+	Route::get('/career/add', admin\CareerController::class .'@create')->name('admin.career.add');
+	Route::post('/career/store', admin\CareerController::class .'@store')->name('admin.career.store');
+	Route::get('/career/edit/{id}', admin\CareerController::class .'@edit')->name('admin.career.edit');
+	Route::post('/career/update/{id}', admin\CareerController::class .'@update')->name('admin.career.update');
+	Route::get('/career/delete/{id}', admin\CareerController::class .'@destroy')->name('admin.career.destroy');
 
 	Route::get('/company-contacts', admin\CompanyContactController::class .'@index')->name('admin.companyContacts');
 	Route::get('/company-contacts/add', admin\CompanyContactController::class .'@create')->name('admin.companyContact.add');

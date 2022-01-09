@@ -26,17 +26,20 @@
         <!-- Services  -->
         <div class="container">
             <div class="row ">
+                @foreach ($services as $service)
                 <div class="col-lg-4 col-md-4 col-sm-6 m-b30">
                     <div class="box">
-                        <div class="media"> <a href="#"><img src="{{asset('user/images/our-work/pic1.jpg')}}" alt=""></a> </div>
+                        <div class="media"> <a href="#"><img src="{{asset('images/service')}}/{{$service->image}}" alt=""></a> </div>
                         <div class="info p-a30 border-1">
-                            <h4 class="title m-t0"><a href="#">First heading</a></h4>
-                            <p>Lorem ipsum dolor Fusce varius euismod lacus eget feugiat rorem ipsum dolor consectetur Fusce varius  </p>
-                            <a href="#" class="site-button ">More</a>
+                            <h4 class="title m-t0"><a href="{{route('service_single', ['id'=>$service->id])}}">{{$service->title}}</a></h4>
+                            <p> {{$service->description}}</p>
+                            <a href="{{route('service_single', ['id'=>$service->id])}}" class="site-button ">More</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 m-b30">
+                @endforeach
+
+                {{-- <div class="col-lg-4 col-md-4 col-sm-6 m-b30">
                     <div class="box">
                         <div class="media"> <a href="#"><img src="{{asset('user/images/our-work/pic2.jpg')}}" alt=""></a> </div>
                         <div class="info p-a30 border-1">
@@ -85,7 +88,7 @@
                             <a href="#" class="site-button">More</a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         <!-- Services END -->

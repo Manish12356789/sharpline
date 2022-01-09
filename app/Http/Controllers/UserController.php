@@ -2,9 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
+use App\Models\Blog;
 use App\Models\Career;
+use App\Models\CompanyContact;
 use App\Models\Contact;
 use App\Models\service;
+use App\Models\SliderImage;
+use App\Models\Testimonial;
+use App\Models\Package;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -12,22 +18,29 @@ class UserController extends Controller
     public function index()
     {
         $services = service::all();
-        return view('welcome', ['services'=>$services]);
+        $testimonials = Testimonial::all();
+        $sliders = SliderImage::all();
+        $blogs = Blog::all();
+        return view('welcome', ['services'=>$services, 'testimonials'=>$testimonials, 'sliders'=> $sliders, 'blogs'=> $blogs
+    ]);
     }
 
     public function services()
     {
-        return view('services');
+        $services = service::all();
+        return view('services',['services'=>$services]);
     }
 
     public function packages()
     {
-        return view('packages');
+        $packages = Package::all();
+        return view('packages', ['packages'=>$packages]);
     }
 
     public function contact()
     {
-        return view('contact');
+        $contact = CompanyContact::first();
+        return view('contact', ['contact'=>$contact]);
     }
 
     public function careers()
@@ -42,12 +55,15 @@ class UserController extends Controller
 
     public function blog()
     {
-        return view('blog');
+        $blogs = Blog::all();
+        $recent = Blog::all()->take(3);
+        return view('blog', ['blogs'=>$blogs, 'recent'=>$recent]);
     }
 
     public function about()
     {
-        return view('about');
+        $about = About::first();
+        return view('about', ['about'=>$about]);
     }
 
     public function service($id)

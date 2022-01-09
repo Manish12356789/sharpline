@@ -17,7 +17,7 @@
     <div class="breadcrumb-row">
         <div class="container">
             <ul class="list-inline">
-                <li><a href="#">Home</a></li>
+                <li><a href="{{route('home')}}">Home</a></li>
                 <li>Career</li>
             </ul>
         </div>
@@ -34,6 +34,7 @@
                             <div class="block-form">
                                 <h3 class="form-head">Become A Professional</h3>
                                 <div class="new-address-block">
+                                    <form method="POST" action="{{route('career.save')}}">
                                     <div class="row">
                                        <div class="form-group col-lg-6 col-md-6 col-sm-6">
                                           <input  value="" class="form-control" placeholder="First Name" type="text">
@@ -48,9 +49,9 @@
                                        </div>
                                        <div class="form-group col-lg-4 col-md-4 col-sm-6">
                                           <select class="" name="">
-                                              <option value="">Services:</option>
-                                              <option value="">Electrical</option>
-                                              <option value="">Plumbing</option>
+                                              <option value="service">Services:</option>
+                                              <option value="electrical">Electrical</option>
+                                              <option value="plumbing">Plumbing</option>
                                           </select>
                                        </div>
                                     </div>
@@ -82,6 +83,7 @@
                                             <button class="site-button button-3d blue m-r15" type="submit">Submit</button>
                                         </div>
                                     </div>
+                                    </form>
                                  </div>
                             </div>
                         </div>

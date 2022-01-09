@@ -15,9 +15,7 @@
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Slider Image</h4>
-                    @if($images->count() < 1)
                       <a class="btn btn-primary float-right" href="{{route('admin.slider.add')}}">Add Image</a>
-                    @endif
                     <div class="table-responsive">
                       <table class="table table-striped">
                         <thead>
