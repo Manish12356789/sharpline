@@ -61,6 +61,9 @@
 <!-- scroll top button -->
 <button class="scroltop fa fa-arrow-up"></button>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <!-- JavaScript  files ========================================= -->
 <script src="{{asset('user/js/jquery.min.js')}}"></script><!-- JQUERY.MIN JS -->
 <script src="{{asset('user/plugins/bootstrap/js/popper.min.js')}}"></script><!-- BOOTSTRAP.MIN JS -->
@@ -79,6 +82,7 @@
 <script src="{{asset('user/js/custom.js')}}"></script><!-- CUSTOM FUCTIONS  -->
 <script src="{{asset('user/js/dz.carousel.js')}}"></script><!-- SORTCODE FUCTIONS  -->
 <script src="{{asset('user/js/dz.ajax.js')}}"></script><!-- CONTACT JS  -->
+<script src="{{asset('user/js/calculator.js')}}"></script> <!-- calculator -->
 <!-- revolution JS FILES -->
 <script src="{{asset('user/plugins/revolution/js/jquery.themepunch.tools.min.js')}}"></script>
 <script src="{{asset('user/plugins/revolution/js/jquery.themepunch.revolution.min.js')}}"></script>
@@ -93,6 +97,7 @@
 <script src="{{asset('user/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
 <script src="{{asset('user/plugins/revolution/js/extensions/revolution.extension.video.min.js')}}"></script>
 <script src="{{asset('user/js/rev.slider.js')}}"></script>
+@yield('js')
 <script>
     jQuery(document).ready(function() {
         'use strict';
@@ -109,7 +114,7 @@
 </script>
 <script type="text/javascript">
     $('.estimate input[type="checkbox"]').on('change', function() {
-        $('input[name="' + this.name + '"]').not(this).prop('checked', false);
+        $('input[name="' + this.name + '"]').not(this).prop('checked', false);bbb
         $(this).parent('.btn').addClass("active");
     });
 </script>
@@ -132,10 +137,9 @@
         });
     });
 </script>
-<!-- <script type="text/javascript">
+<script type="text/javascript">
     $(document).ready(function() {
-        $(".estimate .btn").click(function() {
-            if($(this).find('input[type="checkbox"]').is(':checked'))
+        $(".btn").hasClass('active')
 {
   $(this).addClass('active');
 }else
@@ -144,7 +148,7 @@
 }
         });
     });
-</script> -->
+</script> 
 
 </body>
 

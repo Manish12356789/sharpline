@@ -24,7 +24,7 @@
                 <div class="card">
                     <div class="card-header">
                         {{-- <h3 class="card-title">DataTable with minimal features & hover style</h3> --}}
-                        <a class="btn btn-suuccess" href="{{route('admin.service.add')}}">Add Nwe</a>
+                        <a class="btn btn-suuccess" href="{{route('admin.service.add')}}">Add New</a>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -32,6 +32,9 @@
                             <thead>
                                 <tr>
                                     <th>Title</th>
+                                    <th>Price</th>
+                                    <th>Measurement Type</th>
+                                    <th>Icon</th>
                                     <th>Image</th>
                                     <th>Description(s)</th>
                                     <th>Actions</th>
@@ -41,6 +44,10 @@
                                 @foreach ($data as $data)
                                 <tr>
                                     <td>{{$data->title}}</td>
+                                    <td>{{$data->price}}</td>
+                                    <td>{{$data->measurement}}</td>
+                                    <td><i class="{{$data->icon}}"></i></td>
+
                                     <td> <img src="{{asset('images/services')}}/{{$data->image}}" alt="">
                                     </td>
                                     <td>{{$data->description}}</td>

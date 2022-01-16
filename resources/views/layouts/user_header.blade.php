@@ -15,8 +15,13 @@
                         <li><a href="javascript:void(0);"><i class="fa fa-facebook "></i></a></li>
                         <li><a href="javascript:void(0);"><i class="fa fa-twitter "></i></a></li>
                         <li><a href="javascript:void(0);"><i class="fa fa-linkedin "></i></a></li>
-                        <li><a href="javascript:void(0);">Login</a></li>
-                        <li><a href="javascript:void(0);">Register</a></li>
+                        @auth
+                        <li>{{Auth::user()->name}}</li>
+                        <li><a href="{{route('logout')}}">Logout</a></li>
+                        @else
+                        <li><a href="{{route('login')}}">Login</a></li>
+                        <li><a href="{{route('register')}}">Register</a></li>
+                        @endauth
                         <li> <a id="quik-search-btn"><i class="fa fa-search "></i></a> </li>
                     </ul>
                 </div>

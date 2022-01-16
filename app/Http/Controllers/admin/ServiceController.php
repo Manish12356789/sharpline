@@ -39,6 +39,10 @@ class ServiceController extends Controller
     {
         $save = new service();
         $save->title = $request->title;
+        $save->price = $request->price;
+        $save->measurement = $request->measurement;
+        $save->icon = $request->icon;
+
         if(request()->img){
             $filename = time() . '.' . request()->img->getClientOriginalExtension();
             request()->img->move(public_path('images/services'), $filename);
@@ -86,6 +90,9 @@ class ServiceController extends Controller
     {
         $save = service::find($id);
         $save->title = $request->title;
+        $save->price = $request->price;
+        $save->measurement = $request->measurement;
+        $save->icon = $request->icon;
         if(request()->img){
             $filename = time() . '.' . request()->img->getClientOriginalExtension();
             request()->img->move(public_path('images/services'), $filename);

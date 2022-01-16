@@ -21,6 +21,9 @@ use Illuminate\Support\Facades\Auth;
 // });
 
 // Route::get('/', UserController::class .'@index', name)
+// Route::get('login/', [UserController::class, 'blog'])->name('blog');
+
+
 Route::get('/', [UserController::class, 'index'])->name('home');
 Route::get('services/', [UserController::class, 'services'])->name('services');
 Route::get('packages/', [UserController::class, 'packages'])->name('packages');
@@ -28,6 +31,7 @@ Route::get('contact/', [UserController::class, 'contact'])->name('contact');
 Route::get('careers/', [UserController::class, 'careers'])->name('careers');
 Route::get('book/', [UserController::class, 'book'])->name('book');
 Route::get('blog/', [UserController::class, 'blog'])->name('blog');
+
 Route::get('about/', [UserController::class, 'about'])->name('about');
 Route::get('services/{id}', [UserController::class, 'service'])->name('service_single');
 Route::get('career/save', [UserController::class, 'saveCareer'])->name('career.save');

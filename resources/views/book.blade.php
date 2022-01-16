@@ -37,35 +37,32 @@
                                     <div class="row">
                                         <div class="col-lg-4 col-md-4 col-sm-12 form-group">
                                             <label>Bedrooms</label>
-                                            <select name="bedroom">
-                                                <option value="0">0</option>
-                                                <option value="1" selected="">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
+                                            <input type="hidden" hidden value="{{$bedroom->rate}}" id="br_hidden"/>
+                                            <select name="bedroom" class="dd" id="bedroom">
+                                                @for ($i = 0; $i < $bedroom->limit; $i++)
+                                                    <option value="{{ $i }}">{{ $i }}</option>
+                                                @endfor
                                             </select>
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-12 form-group">
                                             <label>Bathrooms</label>
-                                            <select name="bathroom">
-                                                <option value="1">1</option>
-                                                <option value="1.5">1.5</option>
-                                                <option value="2">2</option>
-                                                <option value="2.5">2.5</option>
-                                                <option value="3">3</option>
-                                                <option value="3.5">3.5</option>
-                                                <option value="4">4</option>
-                                                <option value="4.5">4.5</option>
+                                            <input type="hidden" value="{{$bathroom->rate}}" id="bth_hidden"/>
+                                            <select name="bathroom" class="dd" id="bathroom">
+                                                @for ($i = 0; $i < $bathroom->limit; $i++)
+                                                <option value="{{ $i }}">{{ $i }}</option>
+                                            @endfor
                                             </select>
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-12 form-group">
                                             <label>Set Frequency</label>
-                                            <select name="frequency">
-                                                <option value="ot">One-Time</option>
-                                                <option value="wk">Weekly (20%)</option>
-                                                <option value="eowk" selected="selected">Every Other Week (15%)</option>
-                                                <option value="mt">Monthly (10%)</option>
+                                             <select name="frequency" class="dd" id="frequency">
+                                                 @foreach ($frequency as $frequency)
+                                                 <option value="{{$frequency->rate}}">{{$frequency->title}}</option>
+                                                 @endforeach
+                                                {{-- <option value="One-Time">One-Time</option>
+                                                <option value="Weekly (20%)">Weekly (20%)</option>
+                                                <option value="Every Other Week (15%)" selected="selected">Every Other Week (15%)</option>
+                                                <option value="Monthly (10%)">Monthly (10%)</option> --}}
                                              </select>
                                         </div>
                                     </div>
@@ -74,16 +71,19 @@
                                     <h3 class="form-head">Extras</h3>
                                     <div class="clearfix form-group">
                                         <div class="extras-book" data-toggle="button">
-                                          <label class="btn active">
-                                            <input type="checkbox"  checked><i class="flaticon-broom"></i> Deep Cleaning
-                                          </label>
+                                            {{-- @foreach ($services as $service)
+                                            <label class="btn">
+                                                <input type="checkbox" value="{{$service->price}}" name="service[]" class="checkbox" ><i class="flaticon-broom"></i> Deep Cleaning
+                                              </label>
+                                            @endforeach --}}
+                                         
                                           <label class="btn">
-                                            <input type="checkbox" ><i class="flaticon-baby-stroller"></i> Move In/Out
+                                            <input type="checkbox" class="checkbox" ><i class="flaticon-baby-stroller"></i> Move In/Out
                                           </label>
-                                          <label class="btn">
-                                            <input type="checkbox" ><i class="flaticon-washing-machine"></i> Inside Cabinets
+                                          {{--   <label class="btn">
+                                            <input type="checkbox" class="checkbox" ><i class="flaticon-washing-machine"></i> Inside Cabinets
                                           </label>
-                                          <label class="btn">
+                                        <label class="btn">
                                             <input type="checkbox" ><i class="flaticon-spray-1"></i> Inside Fridge
                                           </label>
                                           <label class="btn">
@@ -97,7 +97,7 @@
                                           </label>
                                           <label class="btn">
                                             <input type="checkbox"  ><i class="flaticon-bucket"></i> Wipe Window Blinds
-                                          </label>
+                                          </label> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -229,14 +229,14 @@
                             <div class="col-lg-4 col-md-12 sticky-box">
                                 <div class="billing-list bg-primary text-white p-a30 m-b30">
                                     <h3 class="text-white m-t0">Booking Summary</h3>
-                                    <ul>
+                                    <ul id="bsul">
                                         <li>
                                             <label>Bedrooms</label>
-                                            :<span>1</span>
+                                            :<span class="br">1</span>
                                         </li>
                                         <li>
                                             <label>Bathrooms</label>
-                                            :<span>1</span>
+                                            :<span class="btr">1</span>
                                         </li>
                                         <li class="services-li">
                                             <label>Extras</label>
@@ -244,7 +244,7 @@
                                         </li>
                                         <li>
                                              <label>Frequency</label>
-                                             :<span>Every Other Week (15%)</span>
+                                             :<span class="fq">Every Other Week (15%)</span>
                                         </li>
                                         <li>
                                              <label>Location</label>
@@ -258,7 +258,7 @@
                                     <ul class="total-money">
                                         <li>
                                             <label>Total</label>
-                                            :<span>Rs. 10,080</span>
+                                            :<span class="total">Rs. 10,080</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -304,4 +304,40 @@
 </div>
 <!-- Content END-->
 
+@endsection
+
+@section('js') 
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
+    <script>
+        $(document).ready(function() {
+            $(".extras-book .btn").click(function() {
+                if ($(".extras-book .btn").hasClass('active')) {
+                    $( ".checkbox").prop("checked", true);
+                    alert("if");
+                } 
+                else {
+                    $( ".checkbox").removeProp("checked");
+                }
+            });
+        });
+        $("body").on('change', '.dd', function(){
+            var bedroom = $("#bedroom").val();
+            var br_rate = $("#br_hidden").val();
+            $('#bsul span.br').text(bedroom);
+            console.log("bedroom", bedroom);
+            var bathroom = $("#bathroom").val();
+            var bth_rate = $("#bth_hidden").val();
+            $('#bsul span.btr').text(bathroom);
+            console.log("btr",bathroom);
+            var frequency = $("#frequency").val();
+            $('#bsul span.fq').text(frequency);
+            console.log("fq",frequency);
+            // console.log("bedroom:", bedroom, "bathroom:", bathroom, "frequency: ", frequency, "text: ", fq_text, "totla: ", total);
+
+            var total = (br_rate*bedroom) + (bth_rate*bathroom);
+            $('.total-money span.total').text(total);
+            console.log("tt",total);
+
+        });
+    </script>
 @endsection

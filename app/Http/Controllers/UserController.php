@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Bathroom;
+use App\Models\Bedroom;
 use App\Models\Blog;
+use App\Models\Book;
 use App\Models\Career;
 use App\Models\CompanyContact;
 use App\Models\Contact;
+use App\Models\Frequency;
 use App\Models\service;
 use App\Models\SliderImage;
 use App\Models\Testimonial;
@@ -50,7 +54,11 @@ class UserController extends Controller
 
     public function book()
     {
-        return view('book');
+        $services = service::all();
+        $bedroom = Bedroom::first();
+        $bathroom = Bathroom::first();
+        $frequency = Frequency::all();
+        return view('book', ['services'=>$services, 'bedroom'=>$bedroom, 'bathroom'=>$bathroom, 'frequency'=>$frequency]);
     }
 
     public function blog()
@@ -111,6 +119,25 @@ class UserController extends Controller
         $saving->email = $request->email;
         $saving->subject = $request->subject;
         $saving->message = $request->message;
+        $saving->save();
+        return redirect()->route('home');
+    }
+
+    public function saveBook(Request $request)
+    {
+        $saving = new Book();
+        $saving->bedroom = $request->bedroom;
+        $saving->bathroom = $request->bathroom;
+        $saving->extra = $request->service;
+        $saving->zip = $request->zip;
+        $saving->email = $request->email;
+        $saving->date = $request->date;
+        $saving->fname = $request->fname;
+        $saving->lname = $request->lname;
+        $saving->address = $request->address;
+        $saving->phone = $request->phone;
+        $saving->alt_phone = $request->alt_phone;
+        $saving->notes = $request->notes;
         $saving->save();
         return redirect()->route('home');
     }

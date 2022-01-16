@@ -32,13 +32,30 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form method="POST" action="{{route('admin.service.update', [])}}" >
+                            <form method="POST" action="{{route('admin.service.store')}}" >
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="title">Email address</label>
                                         <input type="text" class="form-control" name="title" id="title"
                                             placeholder="Enter title">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="price">Price</label>
+                                        <input type="number" class="form-control" name="price" id="price"
+                                            placeholder="Price">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="measurement">Measurement</label>
+                                        <select name="measurement" class="form-select">
+                                            <option value="cm">CM</option>
+                                            <option value="m">Meter</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="icon">Font Awesome Icon</label>
+                                        <input type="text" class="form-control" name="icon" id="icon"
+                                            placeholder="Icon">
                                     </div>
                                     <div class="form-group">
                                         <label for="img">File input</label>
