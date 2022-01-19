@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Book;
+use App\Models\service;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -14,6 +16,8 @@ class DashboardController extends Controller
 
     public function index()
     {
-        return view('admin.dashboard');
+        $services = service::all();
+        $bookings = Book::all();
+        return view('admin.dashboard', ['bookings'=>$bookings, 'services'=>$services]);
     }
 }

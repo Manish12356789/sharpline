@@ -86,9 +86,12 @@
 						</div>
 					</div>
                     <div class="searchbar">
+						<form method="get" action="{{route('search')}}">
+
                         <div class="row">
+								@csrf
                             <div class="col-md-6">
-                                <input type="text" name="" value="" class="form-control" placeholder="Search">
+                                <input type="text" name="search" value="" class="form-control" placeholder="Search">
                             </div>
                             <div class="col-md-4">
                                 <select class="form-control" name="">
@@ -96,9 +99,11 @@
                                 </select>
                             </div>
                             <div class="col-md-2">
-                                <button type="submit" name="" class="form-control site-button white skew-secondry">Search</button>
+                                <button type="submit"  class="form-control site-button white skew-secondry">Search</button>
                             </div>
                         </div>
+					</form>
+
                     </div>
 				</div>
 			</div>

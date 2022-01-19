@@ -31,6 +31,7 @@ Route::get('contact/', [UserController::class, 'contact'])->name('contact');
 Route::get('careers/', [UserController::class, 'careers'])->name('careers');
 Route::get('book/', [UserController::class, 'book'])->name('book');
 Route::get('blog/', [UserController::class, 'blog'])->name('blog');
+Route::get('search/', [UserController::class, 'search'])->name('search');
 
 Route::get('about/', [UserController::class, 'about'])->name('about');
 Route::get('services/{id}', [UserController::class, 'service'])->name('service_single');

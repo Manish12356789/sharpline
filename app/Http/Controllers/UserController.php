@@ -43,7 +43,7 @@ class UserController extends Controller
 
     public function contact()
     {
-        $contact = CompanyContact::first();
+        $contact = CompanyContact::where('id', '=', 1)->get();
         return view('contact', ['contact'=>$contact]);
     }
 
@@ -55,8 +55,9 @@ class UserController extends Controller
     public function book()
     {
         $services = service::all();
-        $bedroom = Bedroom::first();
-        $bathroom = Bathroom::first();
+        $bedroom = Bedroom::where('id', '=', 1)->get();
+        $bathroom = Bathroom::where('id', '=', 1)->get();
+        dd("bedroom:",$services);
         $frequency = Frequency::all();
         return view('book', ['services'=>$services, 'bedroom'=>$bedroom, 'bathroom'=>$bathroom, 'frequency'=>$frequency]);
     }
@@ -140,5 +141,13 @@ class UserController extends Controller
         $saving->notes = $request->notes;
         $saving->save();
         return redirect()->route('home');
+    }
+
+    public function search(Request $request){
+        $search_text = $request->search;
+        $result = service::where('title','LIKE','%'.$search_text.'%')
+                ->orWhere('description','LIKE','%'.$search_text.'%')
+                ->get();
+        return view('services', ['services'=>$result]);
     }
 }

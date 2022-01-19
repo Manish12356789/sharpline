@@ -329,7 +329,8 @@
             var bth_rate = $("#bth_hidden").val();
             $('#bsul span.btr').text(bathroom);
             console.log("btr",bathroom);
-            var frequency = $("#frequency").val();
+            // var frequency = $("#frequency").val();
+            var frequency = $("#frequency option:selected").html();
             $('#bsul span.fq').text(frequency);
             console.log("fq",frequency);
             // console.log("bedroom:", bedroom, "bathroom:", bathroom, "frequency: ", frequency, "text: ", fq_text, "totla: ", total);
