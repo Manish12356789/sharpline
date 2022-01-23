@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="content-wrapper">
+{{-- <div class="content-wrapper"> --}}
     <div class="page-header">
       <h3 class="page-title">Home Page Background Image</h3>
       <nav aria-label="breadcrumb">
@@ -29,7 +29,7 @@
                             @foreach ($images as $image)
                             <tr>
                                 <td class="py-1">
-                                  <img class="img-fluid" src="{{ asset('images/slider') }}/{{$image->image}}" alt="image" />
+                                  <img height="100" width="100" class="img-fluid" src="{{ asset('images/slider') }}/{{$image->image}}" alt="image" />
                                 </td>
                                 <td>
                                   {{$image->name}}
@@ -49,6 +49,6 @@
             </div>
         </div>
     </div>
-</div>
+{{-- </div> --}}
 
 @endsection

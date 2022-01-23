@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="content-wrapper">
+{{-- <div class="content-wrapper"> --}}
     <div class="page-header">
       <h3 class="page-title"> What Consumer's Say? </h3>
       <nav aria-label="breadcrumb">
@@ -28,8 +28,8 @@
                             @foreach ($testimonial as $testimonial)
                             <tr>
                                 <td class="py-1">
-                                  <img src="{{ asset('images/testimonial') }}/{{$testimonial->image}}" alt="image" />
-                                </td>
+                                  <img height="100" width="100" src="{{ asset('images/testimonial') }}/{{$testimonial->image}}" alt="image" />
+                                </td> 
                                 <td>{{$testimonial->text}}</td>
                               </tr>
                             @endforeach
@@ -41,6 +41,6 @@
             </div>
         </div>
     </div>
-</div>
+{{-- </div> --}}
 
 @endsection

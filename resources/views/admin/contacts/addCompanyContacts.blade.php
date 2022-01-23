@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="content-wrapper">
+{{-- <div class="content-wrapper"> --}}
     <div class="page-header">
       <h3 class="page-title">Company Contacts</h3>
       <nav aria-label="breadcrumb">
@@ -22,7 +22,7 @@
                           <div class="form-group row">
                             <label for="email" class="col-form-label">Email</label>
                             <div class="">
-                              <input type="email" name="email" id="email" class="form-control" />
+                              <input type="email" required name="email" id="email" class="form-control" />
                             </div>
                           </div>
                         </div>
@@ -30,7 +30,7 @@
                           <div class="form-group row">
                             <label for="phone" class="col-form-label">Phone Number</label>
                             <div class="">
-                              <input id="phone" name="phone" type="number" class="form-control" />
+                              <input id="phone" required name="phone" type="number" class="form-control" />
                             </div>
                           </div>
                         </div>
@@ -42,7 +42,7 @@
                       <div class="form-group row">
                         <label for="street" class="col-form-label">Street Name</label>
                         <div class="">
-                          <input type="text" name="street" id="street" class="form-control" />
+                          <input type="text" required name="street" id="street" class="form-control" />
                         </div>
                       </div>
                     </div>
@@ -52,7 +52,7 @@
                       <div class="form-group row">
                         <label id="district" class="col-form-label">District</label>
                         <div class="">
-                          <input type="text" name="district"  id="district" class="form-control" />
+                          <input type="text" required name="district"  id="district" class="form-control" />
                         </div>
                       </div>
                     </div>
@@ -60,7 +60,7 @@
                       <div class="form-group row">
                         <label for="postal" class="col-form-label">Postcode</label>
                         <div class="">
-                          <input type="number" name="postal" id="postal"  class="form-control" />
+                          <input type="number" required name="postal" id="postal"  class="form-control" />
                         </div>
                       </div>
                     </div>
@@ -70,7 +70,7 @@
                       <div class="form-group row">
                         <label class="col-form-label">State</label>
                         <div class="">
-                          <input type="text" name="state" id="state" class="form-control" />
+                          <input type="text" required name="state" id="state" class="form-control" />
                         </div>
                       </div>
                     </div>
@@ -78,7 +78,7 @@
                       <div class="form-group row">
                         <label for="country" class="col-form-label">Country</label>
                         <div class="">
-                          <input type="text" name="country" id="country" class="form-control" />
+                          <input type="text" required name="country" id="country" class="form-control" />
                           {{-- <select name="country" id="country" class="form-control">
                             <option value="NPL">Nepal</option>
                             <option value="IND">India</option>
@@ -90,11 +90,12 @@
                     </div>
                   </div>
                   <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                  <a href="{{route('admin.companyContact')}}" class="btn btn-dark">Cancel</button>
 
                 </form>
               </div>
             </div>
           </div>
     </div>
-</div>
+{{-- </div> --}}
 @endsection

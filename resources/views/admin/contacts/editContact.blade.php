@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="content-wrapper">
+{{-- <div class="content-wrapper"> --}}
     <div class="page-header">
       <h3 class="page-title"> Contact Messages</h3>
       <nav aria-label="breadcrumb">
@@ -58,11 +58,12 @@
                   </div>
                   
                   <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                  <a href="{{route('admin.contact')}}" class="btn btn-dark">Cancel</button>
 
                 </form>
               </div>
             </div>
           </div>
     </div>
-</div>
+{{-- </div> --}}
 @endsection

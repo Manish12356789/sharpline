@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="content-wrapper">
+{{-- <div class="content-wrapper"> --}}
     <div class="page-header">
       <h3 class="page-title">Add Slider Image</h3>
       <nav aria-label="breadcrumb">
@@ -20,16 +20,16 @@
                     @csrf
                   <div class="form-group">
                       <label for="name">Name</label>
-                      <input type="text" name="name" id="name" class="form-control">
+                      <input type="text" required name="name" id="name" class="form-control">
                   </div>
                   <div class="form-group">
                     <label>File upload</label>
-                    <input type="file" name="img" class="form-control">
+                    <input type="file" required name="img" class="form-control">
                   </div>
                   
                   <button type="submit" class="btn btn-primary me-2">Submit</button>
-                  <button class="btn btn-dark">Cancel</button>
-                </form>
+                  <a href="{{route('admin.slider')}}" class="btn btn-dark">Cancel</button>
+                  </form>
               </div>
             </div>
         </div>

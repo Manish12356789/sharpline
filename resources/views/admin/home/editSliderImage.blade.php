@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="content-wrapper">
+{{-- <div class="content-wrapper"> --}}
     <div class="page-header">
       <h3 class="page-title">Add Slider Image</h3>
       <nav aria-label="breadcrumb">
@@ -31,11 +31,11 @@
                   </div>
                   
                   <button type="submit" class="btn btn-primary me-2">Submit</button>
-                  <button class="btn btn-dark">Cancel</button>
-                </form>
+                  <a href="{{route('admin.slider')}}" class="btn btn-dark">Cancel</button>
+                  </form>
               </div>
             </div>
         </div>
     </div>
-</div>
+{{-- </div> --}}
 @endsection

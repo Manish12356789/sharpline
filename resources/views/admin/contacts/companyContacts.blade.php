@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="content-wrapper">
+{{-- <div class="content-wrapper"> --}}
     <div class="page-header">
       <h3 class="page-title">Company Contacts</h3>
       <nav aria-label="breadcrumb">
@@ -54,6 +54,6 @@
             </div>
           </div>
     </div>
-</div>
+{{-- </div> --}}
 
 @endsection

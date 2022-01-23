@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="content-wrapper">
+{{-- <div class="content-wrapper"> --}}
     <div class="page-header">
       <h3 class="page-title">Add New Testimonial</h3>
       <nav aria-label="breadcrumb">
@@ -16,15 +16,15 @@
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">Add Testimonial</h4>
-                <form class="forms-sample" enctype="multipart/form-data" action="{{ route('admin.testimonial.update') }}" method="POST">
+                <form class="forms-sample" enctype="multipart/form-data" action="{{ route('admin.testimonial.update', ['id'=>$testmonial->id]) }}" method="POST">
                     @csrf
                     <div class="form-group">
                       <label for="name">Name</label>
-                      <input name="name" id="name" class="form-control" value="{{$testimobial->name}}">
+                      <input name="name" id="name" class="form-control" value="{{$testimonial->name}}">
                   </div>
                   <div class="form-group">
                       <label for="position">Position</label>
-                      <input name="position" id="position" class="form-control" value="{{$testimobial->position}}">
+                      <input name="position" id="position" class="form-control" value="{{$testimonial->position}}">
                   </div>
                   <div class="form-group">
                       <label for="text">Text</label>
@@ -39,11 +39,11 @@
                   </div>
                   
                   <button type="submit" class="btn btn-primary me-2">Submit</button>
-                  <button class="btn btn-dark">Cancel</button>
-                </form>
+                  <a href="{{route('admin.testimonial')}}" class="btn btn-dark">Cancel</button>
+                  </form>
               </div>
             </div>
         </div>
     </div>
-</div>
+{{-- </div> --}}
 @endsection

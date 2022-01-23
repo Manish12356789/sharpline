@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="content-wrapper">
+{{-- <div class="content-wrapper"> --}}
     <div class="page-header">
       <h3 class="page-title">About Us</h3>
       <nav aria-label="breadcrumb">
@@ -20,22 +20,22 @@
                     @csrf
                   <div class="form-group">
                     <label for="name">Heading</label>
-                    <input type="text" class="form-control" id="name" placeholder="Name" name="name">
+                    <input type="text" required class="form-control" id="name" placeholder="Name" name="name">
                   </div>
                   <div class="form-group">
                     <label>File upload</label>
-                    <input type="file" name="img" class="form-control">
+                    <input type="file" required name="img" class="form-control">
                   </div>
                   <div class="form-group">
                     <label for="exampleTextarea1">Description</label>
-                    <textarea class="form-control" id="exampleTextarea1" rows="7" name="description"></textarea>
+                    <textarea class="form-control" required id="exampleTextarea1" rows="7" name="description"></textarea>
                   </div>
                   <button type="submit" class="btn btn-primary me-2">Submit</button>
-                  <button class="btn btn-dark">Cancel</button>
+                  <a href="{{route('admin.about')}}" class="btn btn-dark">Cancel</a>
                 </form>
               </div>
             </div>
         </div>
     </div>
-</div>
+{{-- </div> --}}
 @endsection
