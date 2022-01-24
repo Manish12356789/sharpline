@@ -53,12 +53,14 @@ Route::group(['prefix' => 'admin','middleware' => 'authadmin'], function () {
 	Route::post('/slider-image/update/{id}', admin\SliderImageController::class .'@update')->name('admin.slider.update');
 	Route::get('/slider-image/delete/{id}', admin\SliderImageController::class .'@destroy')->name('admin.slider.destroy');
 
-	Route::get('/services/all', [App\Http\Controllers\admin\ServiceController::class, 'index'])->name('admin.service');
-	// Route::get('/services/add', admin\ServiceController::class .'@create')->name('admin.service.add');
-	// Route::post('/services/store', admin\ServiceController::class .'@store')->name('admin.service.store');
-	// Route::get('/services/edit/{id}', admin\ServiceController::class .'@edit')->name('admin.service.edit');
-	// Route::post('/services/update/{id}', admin\ServiceController::class .'@update')->name('admin.service.update');
-	// Route::get('/services/delete/{id}', admin\ServiceController::class .'@destroy')->name('admin.service.destroy');
+	// Route::get('/services/service', [admin\ServiceController::class, '@index')->name('admin.service');
+	Route::get('/service/all', admin\ServiceController::class .'@index')->name('admin.service');
+
+	Route::get('/service/add', admin\ServiceController::class .'@create')->name('admin.service.add');
+	Route::post('/service/store', admin\ServiceController::class .'@store')->name('admin.service.store');
+	Route::get('/service/edit/{id}', admin\ServiceController::class .'@edit')->name('admin.service.edit');
+	Route::post('/service/update/{id}', admin\ServiceController::class .'@update')->name('admin.service.update');
+	Route::get('/service/delete/{id}', admin\ServiceController::class .'@destroy')->name('admin.service.destroy');
 
 	Route::get('/about/about', admin\AboutUsController::class .'@index')->name('admin.about.about');
 	Route::get('/about/add', admin\AboutUsController::class .'@create')->name('admin.about.add');

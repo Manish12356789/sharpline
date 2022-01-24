@@ -8,7 +8,7 @@
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="{{route('admin.home')}}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
                     <li class="breadcrumb-item active">Services</li>
                 </ol>
             </div>
@@ -24,7 +24,7 @@
                 <div class="card">
                     <div class="card-header">
                         {{-- <h3 class="card-title">DataTable with minimal features & hover style</h3> --}}
-                        <a class="btn btn-suuccess" href="{{route('admin.service.add')}}">Add New</a>
+                        <a class="btn btn-success" href="{{route('admin.service.add')}}">Add New</a>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -41,7 +41,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($data as $data)
+                                @foreach ($datas as $data)
                                 <tr>
                                     <td>{{$data->title}}</td>
                                     <td>{{$data->price}}</td>
@@ -52,8 +52,8 @@
                                     </td>
                                     <td>{{$data->description}}</td>
                                     <td> 
-                                        <a href="{{route(admin.service.edit)}}" class="btn btn-primary">Edit</a>
-                                        <a href="{{route(admin.service.destroy)}}" class="btn btn-danger">Delete</a>
+                                        <a href="{{route('admin.service.edit', ['id'=>$data->id])}}" class="btn btn-primary">Edit</a>
+                                        <a href="{{route('admin.service.destroy', ['id'=>$data->id])}}" class="btn btn-danger">Delete</a>
                                     </td>
                                 </tr>
                                 @endforeach
