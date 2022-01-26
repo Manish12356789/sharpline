@@ -15,6 +15,7 @@ use App\Models\service;
 use App\Models\SliderImage;
 use App\Models\Testimonial;
 use App\Models\Package;
+use App\Models\Suscribe;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -149,5 +150,13 @@ class UserController extends Controller
                 ->orWhere('description','LIKE','%'.$search_text.'%')
                 ->get();
         return view('services', ['services'=>$result]);
+    }
+
+    public function suscribe(Request $request)
+    {
+        $saving = new Suscribe();
+        $saving->email = $request->dzEmail;
+        $saving->save();
+        return redirect()->route('home');
     }
 }

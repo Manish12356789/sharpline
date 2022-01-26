@@ -34,10 +34,9 @@
                         <h4 class="m-b15 text-uppercase">Contact us</h4>
                         <div class="separator bg-primary"></div>
                         <ul>
-                            <li><i class="fa fa-map-marker"></i><strong>address</strong>Sankhamul, Kathmandu, Nepal</li>
-                            <li><i class="fa fa-phone"></i><strong>phone</strong>+977-1234567890 (24/7 Support Line)</li>
-                            <li><i class="fa fa-fax"></i><strong>FAX</strong>(123) 123-4567<br />
-                                000 123 2294 089</li>
+                            <li><i class="fa fa-map-marker"></i><strong>address</strong>{{$contact->address}}</li>
+                            <li><i class="fa fa-phone"></i><strong>phone</strong>{{$contact->phone}} (24/7 Support Line)</li>
+                            <li><i class="fa fa-fax"></i><strong>FAX</strong>{{$contact->fax}}</li>
                         </ul>
                     </div>
                 </div>
@@ -46,15 +45,17 @@
                         <h4 class="m-b15 text-uppercase">Recent Post</h4>
                         <div class="separator bg-primary"></div>
                         <ul>
-                            <li><a class="img-overlay1 img-effect" href="javascript:void(0);"><img src="images/gallery/small/pic1.jpg" alt=""></a> </li>
-                            <li><a class="img-overlay1 img-effect" href="javascript:void(0);"><img src="images/gallery/small/pic2.jpg" alt=""></a> </li>
+                            @foreach ($blogs as $item)
+                                <li><a class="img-overlay1 img-effect" href="{{route('blog-single', ['id'=>$id])}}"><img src="{{asset('images/blog')}}/{{$item->image}}" alt=""></a> </li>
+                            @endforeach
+                            {{-- <li><a class="img-overlay1 img-effect" href="javascript:void(0);"><img src="images/gallery/small/pic2.jpg" alt=""></a> </li>
                             <li><a class="img-overlay1 img-effect" href="javascript:void(0);"><img src="images/gallery/small/pic3.jpg" alt=""></a> </li>
                             <li><a class="img-overlay1 img-effect" href="javascript:void(0);"><img src="images/gallery/small/pic4.jpg" alt=""></a> </li>
                             <li><a class="img-overlay1 img-effect" href="javascript:void(0);"><img src="images/gallery/small/pic5.jpg" alt=""></a> </li>
                             <li><a class="img-overlay1 img-effect" href="javascript:void(0);"><img src="images/gallery/small/pic7.jpg" alt=""></a> </li>
                             <li><a class="img-overlay1 img-effect" href="javascript:void(0);"><img src="images/gallery/small/pic6.jpg" alt=""></a> </li>
                             <li><a class="img-overlay1 img-effect" href="javascript:void(0);"><img src="images/gallery/small/pic8.jpg" alt=""></a> </li>
-                            <li><a class="img-overlay1 img-effect" href="javascript:void(0);"><img src="images/gallery/small/pic9.jpg" alt=""></a> </li>
+                            <li><a class="img-overlay1 img-effect" href="javascript:void(0);"><img src="images/gallery/small/pic9.jpg" alt=""></a> </li> --}}
                         </ul>
                     </div>
                 </div>
@@ -72,7 +73,7 @@
                     </div>
                     <div class="col-lg-8 col-md-6">
                         <div class="newsLetter-bx m-t20 m-b10">
-                            <form class="dzSubscribe" action="https://clean360.dexignlab.com/xhtml/script/mailchamp.php" method="post">
+                            <form class="dzSubscribe" action="{{route('suscribe')}}" method="post">
                                 <div class="input-group">
                                     <div class="dzSubscribeMsg"></div>
                                     <input name="dzEmail" required="required" class="form-control" placeholder="Your Email Address" type="email">

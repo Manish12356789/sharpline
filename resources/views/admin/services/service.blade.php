@@ -48,9 +48,9 @@
                                     <td>{{$data->measurement}}</td>
                                     <td><i class="{{$data->icon}}"></i></td>
 
-                                    <td> <img src="{{asset('images/services')}}/{{$data->image}}" alt="">
+                                    <td> <img height="100" width="100" src="{{asset('images/services')}}/{{$data->image}}" alt="">
                                     </td>
-                                    <td>{{$data->description}}</td>
+                                    <td>{!!$data->description!!}</td>
                                     <td> 
                                         <a href="{{route('admin.service.edit', ['id'=>$data->id])}}" class="btn btn-primary">Edit</a>
                                         <a href="{{route('admin.service.destroy', ['id'=>$data->id])}}" class="btn btn-danger">Delete</a>

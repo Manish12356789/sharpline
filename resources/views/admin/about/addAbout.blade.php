@@ -28,7 +28,7 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleTextarea1">Description</label>
-                    <textarea class="form-control" required id="exampleTextarea1" rows="7" name="description"></textarea>
+                    <textarea class="form-control" required id="editor1" rows="7" name="description"></textarea>
                   </div>
                   <button type="submit" class="btn btn-primary me-2">Submit</button>
                   <a href="{{route('admin.about')}}" class="btn btn-dark">Cancel</a>

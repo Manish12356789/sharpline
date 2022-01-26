@@ -43,7 +43,7 @@ class BlogController extends Controller
         $saving->title = $request->title;
         if(request()->img){
             $filename = time() . '.' . request()->img->getClientOriginalExtension();
-            request()->img->move(public_path('images/about'), $filename);
+            request()->img->move(public_path('images/blog'), $filename);
             $saving->image = $filename;
         }else
         {

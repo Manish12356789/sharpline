@@ -34,7 +34,7 @@
                                                     src="{{ asset('images/about') }}/{{ $content->image }}" alt="image" />
                                             </td>
                                             <td> {{ $content->name }} </td>
-                                            <td>{{ $content->description }}</td>
+                                            <td>{!! $content->description !!}</td>
                                             <td>
                                                 <a href="{{ route('admin.about.edit', ['id' => $content->id]) }}"
                                                     class="btn btn-primary">Edit</a>

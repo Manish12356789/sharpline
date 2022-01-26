@@ -32,7 +32,7 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form method="POST" action="{{route('admin.service.store')}}" >
+                            <form method="POST" action="{{route('admin.service.store')}}" enctype="multipart/form-data" >
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group">
@@ -59,6 +59,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="img">File input</label>
+                                        {{-- <input type="file" name="img" class="custom-file-input" id="img"> --}}
                                         <div class="input-group">
                                             <div class="custom-file">
                                                 <input type="file" name="img" class="custom-file-input" id="img">
@@ -69,7 +70,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <textarea id="summernote" name="description">
+                                    <textarea id="editor1" name="description">
                                         Place <em>some</em> <u>text</u> <strong>here</strong>
                                       </textarea>
                                 </div>
@@ -86,4 +87,11 @@
         </section>
 
 
+@endsection
+
+
+@section('js')
+<script>
+    CKEDITOR.replace( 'editor1' );
+</script>
 @endsection
